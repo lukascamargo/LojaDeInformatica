@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package Main;
+import View.VendasView;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -15,7 +20,15 @@ public class LojaDeInformatica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(LojaDeInformatica.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        VendasView v = new VendasView();
+        v.setVisible(true);
     }
     
 }

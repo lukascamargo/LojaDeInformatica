@@ -12,7 +12,6 @@ import java.util.ArrayList;
 /**
  *
  * @author fernando.fernandes
- * Padrão Singleton
  */
 public class SimulaDB {
     

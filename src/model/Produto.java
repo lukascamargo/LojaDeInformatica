@@ -10,5 +10,23 @@ package model;
  * @author fernando.fernandes
  */
 public class Produto {
+    private double valor;
+    private String nome;
+    
+    public double getValor(){
+        return valor;
+    }
+    
+    public Produto(){
+        
+    }
+    
+    public Produto(String nome){
+        this.nome = nome;
+    }
+    
+    public String getNome(){
+        return nome;
+    }
     
 }
