@@ -12,6 +12,7 @@ import java.util.ArrayList;
 /**
  *
  * @author fernando.fernandes
+ * Padrão Singleton
  */
 public class SimulaDB {
     
@@ -21,7 +22,7 @@ public class SimulaDB {
     private ArrayList<Produto> listaProdutos; //Simulo a tabela Produtos
     
     
-    private SimulaDB(){
+    public SimulaDB(){
     
         listaClientes = new ArrayList<Cliente>();
         listaProdutos = new ArrayList<Produto>();
@@ -67,6 +68,44 @@ public class SimulaDB {
         
         return true;
     }
+    
+      public boolean SalvarProduto(Produto p)
+    {
+        listaProdutos.add(p);
+        
+        return true;
+    }
+    
+    public ArrayList<Produto> getProdutos()
+    {
+        return this.listaProdutos;
+    }
+    
+    
+    public boolean AtualizarProduto(Produto p)
+    {
+        for(Produto item: listaProdutos)
+        {
+            if(item.getIdProduto() == p.getIdProduto())
+            {
+                item.setNome(p.getNome());
+                item.setQuantidade(p.getQuantidade());
+                item.setValor(p.getValor());
+                item.setCategoria(p.getCategoria());
+                item.setMarca(p.getMarca());
+            }
+        }
+            
+        return true;
+    }
+    
+    public boolean ExcluirProduto(int i)
+    {
+        listaProdutos.remove(i);
+        
+        return true;
+    }
+    
     
     
 }

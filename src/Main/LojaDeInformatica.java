@@ -5,6 +5,7 @@
  */
 package Main;
 import View.VendasView;
+import View.CadastroProdutoView;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -27,7 +28,8 @@ public class LojaDeInformatica {
             Logger.getLogger(LojaDeInformatica.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        VendasView v = new VendasView();
+        //VendasView v = new VendasView();
+        CadastroProdutoView v = new CadastroProdutoView();
         v.setVisible(true);
     }
     

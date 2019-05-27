@@ -321,7 +321,7 @@ public class VendasView extends javax.swing.JFrame {
 
     private void salvarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarVendaActionPerformed
         // TODO add your handling code here:
-        Produto prod = new Produto("Mouse sem Fio");
+        Produto prod = new Produto();
         Cliente c = new Cliente("Lukas Fialho Rezende de Camargo", "42350363864");
         ArrayList<Produto> produtos = new ArrayList<Produto>();
         produtos.add(prod);
