@@ -24,6 +24,11 @@ public class ProdutoController {
             return produtoDAO.SalvarProduto(p);
         }
         
+        public void excluir(int index){
+            
+            produtoDAO.ExcluirProduto(index);
+        }
+        
         
         public ArrayList<String[]> getProdutos(){
             ArrayList<Produto> Produtos = produtoDAO.getProdutos();       
@@ -41,6 +46,26 @@ public class ProdutoController {
             }
         
             return listaProdutos;
+        }
+        
+        public ArrayList<String[]> getID(int i){
+                    
+            ArrayList<Produto> Produtos = produtoDAO.getProdutos();       
+            ArrayList<String[]> produtoPesquisado = new ArrayList<>();
+            if (i < produtoPesquisado.size()){
+                i--;
+                produtoPesquisado.add(new String[]{
+                    String.valueOf(Produtos.get(i).getIdProduto()),
+                    Produtos.get(i).getNome(),
+                    String.valueOf(Produtos.get(i).getQuantidade()),
+                    String.valueOf(Produtos.get(i).getValor()),
+                    Produtos.get(i).getCategoria(),
+                    Produtos.get(i).getMarca()
+                });
+        
+            return produtoPesquisado;
+            }
+            return produtoPesquisado;
         }
             
 }

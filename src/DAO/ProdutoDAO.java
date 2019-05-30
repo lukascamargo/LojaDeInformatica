@@ -40,6 +40,12 @@ public class ProdutoDAO {
         return p;
     }
     
+        public void ExcluirProduto(int i){   
+            
+        listaProdutos.remove(i);
+
+    }
+    
     public ArrayList<Produto> getProdutos(){
         return this.listaProdutos;
     }

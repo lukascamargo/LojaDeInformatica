@@ -33,6 +33,14 @@ public class VendaController {
         return vendaDAO.AtualizarVenda(venda);
     }
     
+    public Venda adicionaProduto(int codigo, Produto pAdd) {
+        Venda venda = vendaDAO.getVenda(codigo);
+        ArrayList<Produto> produtos = venda.getProdutos();
+        produtos.add(pAdd);
+        venda.setProdutos(produtos);
+        return venda;
+    }
+    
     public ArrayList<String[]> getVendas(){
         ArrayList<Venda> vendas = vendaDAO.getVendas();
         ArrayList<String[]> listaVendas = new ArrayList<>();
